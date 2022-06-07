@@ -11,7 +11,7 @@ export function getEvents() {
     method: 'GET',
     headers: {
     'content-type': 'application',
-    'x-apikey': 'api key'
+    'x-apikey': '597d59cd454c830413d1734d7a67201452bff'
     },
     })
     .then(response => response.json())
