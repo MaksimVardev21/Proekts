@@ -40,8 +40,9 @@ export function getEvents() {
 export function Delete(id) {
     const options = {
         method: "DELETE",
+        url: `${BASE_URL}/${id}`,
         headers: {
-            'x-apikey': `${apikey}/${id}`,
+            'x-apikey': apikey,
             'content-type': 'application/json'
         }
     };
