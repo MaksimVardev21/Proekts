@@ -20,7 +20,7 @@ export function getEvents() {
     date: moment(item.date, "DD/MM/YYYY HH:mm").toDate()
     })))
    }
-   export function add(budget, name,location,startDate, description,days) {
+   export function Add(budget, name,location,startDate, description,days) {
     return fetch(BASE_URL, {
     method: 'POST',
     headers: {
