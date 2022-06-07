@@ -4,18 +4,19 @@ import uuid from 'uuid';
 const BASE_URL = 'https://proekts-953e.restdb.io/rest/title';
 const apikey = '597d59cd454c830413d1734d7a67201452bff';
 const request = require("request");
-
 export function Get() {
-var options = { method: 'GET',
-url: BASE_URL,
-headers: 
-{ 'x-apikey': '9a86840c25ab3c1add8beb4392e281456f899' } };
+    var options = {
+        method: 'GET',
+        url: BASE_URL,
+        headers:
+            { 'x-apikey': '9a86840c25ab3c1add8beb4392e281456f899' }
+    };
 
-request(options, function (error, response, body) {
-  if (error) throw new Error(error);
-});
+    request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+    });
 }
-  export function Add(budget, name, location, startDate, description, days) {
+export function Add(budget, name, location, startDate, description, days) {
     return fetch(BASE_URL, {
         method: 'POST',
         headers: {
@@ -34,6 +35,7 @@ request(options, function (error, response, body) {
         .then(result => result.json())
         .catch(error => console.log(error))
 }
+
 export function Delete(id) {
     const options = {
         method: "DELETE",
@@ -43,11 +45,11 @@ export function Delete(id) {
             'content-type': 'application/json'
         }
     };
-    request(BASE_URL, options, function(error, response, body) {
+    request(BASE_URL, options, function (error, response, body) {
         console.log(body);
     })
 }
-export function Update(id,budget, name,location,startDate, description,days) {
+export function Update(id, budget, name, location, startDate, description, days) {
     const options = {
         method: "PUT",
         headers: {
