@@ -53,3 +53,18 @@ export function Delete(id) {
         console.log(body);
     })
 }
+export function Update(id,budget, name,location,startDate, description,days) {
+    const options = {
+        method: "PUT",
+        headers: {
+            'x-apikey': `${apikey}/${id}`,
+            'content-type': 'application/json'
+        },
+        body: {
+            "budget": budget, "name": name, "location": location, "startDate": startDate, "description": description, "days": days
+        }
+    };
+    request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+    })
+}
