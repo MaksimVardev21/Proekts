@@ -15,26 +15,25 @@ request(options, function (error, response, body) {
   if (error) throw new Error(error);
 });
 }
-   export function Add(budget, name,location,startDate, description,days) {
+  export function Add(budget, name, location, startDate, description, days) {
     return fetch(BASE_URL, {
-    method: 'POST',
-    headers: {
-    'content-type': 'application/json',
-    'x-apikey': '597d59cd454c830413d1734d7a67201452bff'
-    },
-    body: JSON.stringify({
-    budget,
-    name,
-    location,
-    startDate,
-    description,
-    days,   
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json',
+            'x-apikey': '597d59cd454c830413d1734d7a67201452bff'
+        },
+        body: JSON.stringify({
+            budget,
+            name,
+            location,
+            startDate,
+            description,
+            days,
+        })
     })
-    })
-    .then(result => result.json())
-    .catch(error => console.log(error))
-   }
-
+        .then(result => result.json())
+        .catch(error => console.log(error))
+}
 export function Delete(id) {
     const options = {
         method: "DELETE",
