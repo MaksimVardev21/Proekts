@@ -6,14 +6,16 @@ const apikey = '597d59cd454c830413d1734d7a67201452bff';
 const request = require("request");
 
 export function Get() {
-var options = { method: 'GET',
-url: BASE_URL,
-headers: 
-{ 'x-apikey': '9a86840c25ab3c1add8beb4392e281456f899' } };
+    var options = {
+        method: 'GET',
+        url: BASE_URL,
+        headers:
+            { 'x-apikey': '9a86840c25ab3c1add8beb4392e281456f899' }
+    };
 
-request(options, function (error, response, body) {
-  if (error) throw new Error(error);
-});
+    request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+    });
 }
   export function Add(budget, name, location, startDate, description, days) {
     return fetch(BASE_URL, {
