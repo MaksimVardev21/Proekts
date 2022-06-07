@@ -20,7 +20,7 @@ export function getEvents() {
     date: moment(item.date, "DD/MM/YYYY HH:mm").toDate()
     })))
    }
-   export function addEvent(budget, name,lucation,startDate, description,days) {
+   export function addEvent(budget, name,location,startDate, description,days) {
     return fetch(BASE_URL, {
     method: 'POST',
     headers: {
@@ -28,13 +28,12 @@ export function getEvents() {
     'x-apikey': '597d59cd454c830413d1734d7a67201452bff'
     },
     body: JSON.stringify({
-    budget
-    name
-    lucation
-    startDate
-    description
-    days    
-    id: uuid()
+    budget,
+    name,
+    location,
+    startDate,
+    description,
+    days,   
     })
     })
     .then(result => result.json())
