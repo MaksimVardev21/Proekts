@@ -18,3 +18,19 @@ export function getEvents() {
     date: moment(item.date, "DD/MM/YYYY HH:mm").toDate()
     })))
    }
+export function addEvent({title, date}) {
+    return fetch(BASE_URL, {
+    method: 'POST',
+    headers: {
+    'content-type': 'application/json',
+    'x-apikey': '597d59cd454c830413d1734d7a67201452bff'
+    },
+    body: JSON.stringify({
+    title,
+    date,
+    id: uuid()
+    })
+    })
+    .then(result => result.json())
+    .catch(error => console.log(error))
+   } 
