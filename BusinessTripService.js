@@ -16,6 +16,18 @@ export function Get() {
         if (error) throw new Error(error);
     });
 }
+export function Getbyid(id) {
+    var options = {
+        method: 'GET',
+        url: `${BASE_URL}/${id}`,
+        headers:
+            { 'x-apikey': '9a86840c25ab3c1add8beb4392e281456f899' }
+    };
+
+    request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+    });
+}
 export function Add(budget, name, location, startDate, description, days) {
     return fetch(BASE_URL, {
         method: 'POST',
