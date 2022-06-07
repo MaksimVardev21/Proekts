@@ -11,7 +11,6 @@ export function Get() {
         headers:
             { 'x-apikey': '9a86840c25ab3c1add8beb4392e281456f899' }
     };
-
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
     });
