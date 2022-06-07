@@ -24,8 +24,8 @@ export function getEvents() {
     return fetch(BASE_URL, {
     method: 'POST',
     headers: {
-    'content-type': 'application',
-    'x-apikey': ' '
+    'content-type': 'application/json',
+    'x-apikey': '597d59cd454c830413d1734d7a67201452bff'
     },
     body: JSON.stringify({
     title,
