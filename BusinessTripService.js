@@ -1,7 +1,9 @@
 import moment from 'moment';
 import uuid from 'uuid';
 
-const BASE_URL = '';
+const BASE_URL = 'https://proekts-953e.restdb.io/rest/title';
+const apikey = '597d59cd454c830413d1734d7a67201452bff';
+const request = require("request");
 
 export function getEvents() {
     return fetch(BASE_URL,
@@ -34,3 +36,16 @@ export function getEvents() {
     .then(result => result.json())
     .catch(error => console.log(error))
    }
+
+export function Delete(id) {
+    const options = {
+        method: "DELETE",
+        headers: {
+            'x-apikey': `${apikey}/${id}`,
+            'content-type': 'application/json'
+        }
+    };
+    request(BASE_URL, options, function(error, response, body) {
+        console.log(body);
+    })
+}
