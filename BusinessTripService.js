@@ -10,7 +10,7 @@ export function getEvents() {
     {
     method: 'GET',
     headers: {
-    'content-type': 'application',
+    'content-type': 'apikey',
     'x-apikey': '597d59cd454c830413d1734d7a67201452bff'
     },
     })
