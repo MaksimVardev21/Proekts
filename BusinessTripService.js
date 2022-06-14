@@ -9,7 +9,7 @@ export function Get() {
         method: 'GET',
         url: BASE_URL,
         headers:
-            { 'x-apikey': '9a86840c25ab3c1add8beb4392e281456f899' }
+            { 'x-apikey': apikey }
     };
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
@@ -20,7 +20,7 @@ export function Getbyid(id) {
         method: 'GET',
         url: `${BASE_URL}/${id}`,
         headers:
-            { 'x-apikey': '9a86840c25ab3c1add8beb4392e281456f899' }
+            { 'x-apikey': apikey }
     };
 
     request(options, function (error, response, body) {
@@ -57,14 +57,15 @@ export function Delete(id) {
         }
     };
     request(BASE_URL, options, function (error, response, body) {
-        console.log(body);
+        if (error) throw new Error(error);
     })
 }
 export function Update(id, budget, name, location, startDate, description, days) {
     const options = {
         method: "PUT",
+        url: `${BASE_URL}/${id}`,
         headers: {
-            'x-apikey': `${apikey}/${id}`,
+            'x-apikey': apikey,
             'content-type': 'application/json'
         },
         body: {
