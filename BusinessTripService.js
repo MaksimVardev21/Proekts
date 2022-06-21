@@ -75,4 +75,8 @@ export function Update(id, budget, name, location, startDate, description, days)
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
     })
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> f53d4bde2d1d95741131308c3a7c91b459106f14
