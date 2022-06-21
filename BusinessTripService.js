@@ -3,7 +3,6 @@ import uuid from 'uuid';
 
 const BASE_URL = 'https://proekts-953e.restdb.io/rest/title';
 const apikey = '597d59cd454c830413d1734d7a67201452bff';
-
 const request = require("request");
 export function Get() {
     var options = {
@@ -76,4 +75,8 @@ export function Update(id, budget, name, location, startDate, description, days)
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
     })
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> f53d4bde2d1d95741131308c3a7c91b459106f14
